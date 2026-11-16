@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciphers Through Civilizations | شفرات الحضارات</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="glyphs" aria-hidden="true">𓂀&nbsp; ϟ &nbsp;⌘&nbsp; ᚠ&nbsp; # &nbsp;۞&nbsp; 0101&nbsp; ⌬&nbsp; ϟ&nbsp; @</div>
+  <header class="topbar hidden" id="topbar">
+    <button class="icon-btn" id="pauseBtn" aria-label="إيقاف مؤقت">Ⅱ</button>
+    <div class="brand-mini">CIPHERS <span>✦</span> CIVILIZATIONS</div>
+    <div class="status"><span id="playerDisplay">—</span><span>◈ <b id="scoreDisplay">0</b></span><span>◷ <b id="timeDisplay">00:00</b></span><button class="icon-btn" id="soundBtn" aria-label="الصوت">♬</button></div>
+  </header>
+  <main id="app">
+    <section class="screen intro active" id="welcome">
+      <div class="university">FAHAD BIN SULTAN UNIVERSITY <i></i> COLLEGE OF COMPUTER SCIENCE</div>
+      <div class="crest">⌬</div>
+      <p class="eyebrow">A CULTURAL DAY EXPERIENCE</p>
+      <h1>CIPHERS THROUGH<br><em>CIVILIZATIONS</em></h1>
+      <h2>شفرات الحضارات</h2><p class="tagline">اكتشف أسرار التشفير عبر التاريخ</p>
+      <div class="intro-actions"><button class="gold-btn" id="startBtn">START JOURNEY <span>←</span></button><button class="line-btn" id="howBtn">HOW TO PLAY</button></div>
+      <p class="footer-note">من الأسرار القديمة إلى الأمن السيبراني الحديث</p>
+    </section>
+
+    <section class="screen modal-screen" id="nameScreen"><div class="panel compact"><p class="eyebrow">YOUR IDENTITY</p><h2>ابدأ باسمك المستعار</h2><p>سيظهر الاسم في لوحة المتصدرين وشهادة الإنجاز.</p><input id="nameInput" maxlength="20" placeholder="مثال: Cipher Explorer" autocomplete="off" /><button class="gold-btn" id="continueBtn">دخول الخريطة <span>←</span></button></div></section>
+    <section class="screen modal-screen" id="howScreen"><div class="panel compact"><button class="close" data-close="howScreen">×</button><p class="eyebrow">HOW TO PLAY</p><h2>كيف تبدأ الرحلة؟</h2><ol><li>حلّ تحدي كل حقبة لتفتح التالية.</li><li>الإجابة الصحيحة من المحاولة الأولى تمنحك 100 نقطة.</li><li>استخدم التلميح عند الحاجة (−10 نقاط).</li><li>دقّق في الوقت — الترتيب يعتمد على النقاط ثم السرعة.</li></ol><button class="gold-btn" data-close="howScreen">فهمت، هيا بنا</button></div></section>
+    <section class="screen map-screen" id="mapScreen"><div class="map-head"><p class="eyebrow">THE TIMELINE AWAITS</p><h2>خريطة رحلة التشفير</h2><p>اختر المحطة المفتوحة التالية، <strong id="mapPlayer"></strong>.</p></div><div class="timeline" id="levelMap"></div><div class="map-actions"><button class="line-btn" id="leaderBtn">LEADERBOARD</button><button class="line-btn" id="resetProgressBtn">إعادة الرحلة</button></div></section>
+    <section class="screen game-screen" id="levelScreen"><div class="level-shell"><button class="back-btn" id="backMap">← الخريطة</button><div class="level-hero"><span id="levelEra">LEVEL 01</span><h2 id="levelTitle"></h2><p id="levelSubtitle"></p></div><div class="level-grid"><article class="learn-card"><p class="eyebrow">THE STORY</p><h3>قبل التحدّي</h3><p id="levelInfo"></p><div class="fact" id="levelFact"></div></article><article class="challenge-card"><div class="challenge-top"><div><p class="eyebrow">MISSION</p><h3 id="challengeTitle">حل الشفرة</h3></div><button class="hint-btn" id="hintBtn">⌁ تلميح <small>(−10)</small></button></div><div id="challengeArea"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="challenge-actions"><button class="line-btn" id="retryBtn">إعادة المحاولة</button><button class="gold-btn" id="checkBtn">تحقق من الحل <span>←</span></button></div></article></div></div></section>
+    <section class="screen modal-screen" id="successScreen"><div class="panel compact success"><div class="medal">✦</div><p class="eyebrow">LEVEL CLEARED</p><h2>أحسنت يا مستكشف الشفرات!</h2><p id="successText"></p><div class="points-pop" id="pointsPop">+100</div><button class="gold-btn" id="nextBtn">المستوى التالي <span>←</span></button></div></section>
+    <section class="screen modal-screen" id="pauseScreen"><div class="panel compact"><p class="eyebrow">PAUSED</p><h2>الرحلة متوقفة مؤقتًا</h2><p>خذ وقتك. سيبقى العداد متوقفًا حتى تعود.</p><button class="gold-btn" id="resumeBtn">متابعة الرحلة</button></div></section>
+    <section class="screen modal-screen" id="leaderScreen"><div class="panel leaderboard"><button class="close" data-close="leaderScreen">×</button><p class="eyebrow">LOCAL HALL OF FAME</p><h2>لوحة المتصدرين</h2><div class="rank-head"><span>#</span><span>المستكشف</span><span>النقاط</span><span>الوقت</span></div><div id="leaderRows"></div><button class="gold-btn" data-close="leaderScreen">عودة للخريطة</button></div></section>
+    <section class="screen modal-screen" id="finalScreen"><div class="panel final"><div class="medal">⌬</div><p class="eyebrow">MISSION COMPLETED!</p><h2>تهانينا، لقد أصبحت مستكشف الشفرات.</h2><p>رحلتك بيّنت أن الأفكار العظيمة تنتقل من شرائط إسبرطة إلى حماية عالمنا الرقمي.</p><div class="results"><div><small>المستكشف</small><b id="finalName"></b></div><div><small>النقاط</small><b id="finalScore"></b></div><div><small>الوقت</small><b id="finalTime"></b></div><div><small>المستويات</small><b>5 / 5</b></div><div><small>التقييم</small><b id="finalRank"></b></div></div><div class="intro-actions"><button class="gold-btn" id="certificateBtn">CERTIFICATE</button><button class="line-btn" id="playAgainBtn">PLAY AGAIN</button></div></div></section>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
